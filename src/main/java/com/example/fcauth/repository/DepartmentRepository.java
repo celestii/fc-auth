@@ -1,4 +1,7 @@
 package com.example.fcauth.repository;
 
-public interface DepartmentRepository {
+import com.example.fcauth.model.Department;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DepartmentRepository extends JpaRepository<Department, Long> {
 }

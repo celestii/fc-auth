@@ -22,8 +22,8 @@ spring:
       validation-timeout: 5000       # ??? ??? ?? ?? (ms)
       connection-test-query: SELECT 1
 
-logging:
-  level:
-    com.zaxxer.hikari: DEBUG
+#logging:
+#  level:
+#    com.zaxxer.hikari: DEBUG
 
 
