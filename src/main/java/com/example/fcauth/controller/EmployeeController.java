@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,5 +22,13 @@ public class EmployeeController {
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>> listAll() {
         return new ResponseEntity<>(employeeService.listEmployees(), HttpStatus.OK);
+    }
+
+    @PostMapping("/employees")
+    public ResponseEntity<Employee> createEmployee(@RequestParam String firstName,
+                                                   @RequestParam String lastName,
+                                                   @RequestParam Long departmentId) {
+        Employee employee = employeeService.createEmployee(firstName, lastName, departmentId);
+        return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
 }
