@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: fc-auth
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/fc_auth?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password!@#
+    hikari:
+      pool-name: HikariPool-1
+      maximum-pool-size: 10          # ??? ??? ? ?? ?? ??? ?
+      minimum-idle: 5                # ?? ?? ??? ?
+      idle-timeout: 600000           # ???? ?? ??? ??? ? ?? ?? ?? (ms)
+      max-lifetime: 1800000          # ???? ??? ???? ?? ?? (ms)
+      connection-timeout: 30000      # ??? ??? ???? ?? ?? (ms)
+      validation-timeout: 5000       # ??? ??? ?? ?? (ms)
+      connection-test-query: SELECT 1
+
+logging:
+  level:
+    com.zaxxer.hikari: DEBUG
+
+
