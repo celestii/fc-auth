@@ -1,10 +1,7 @@
 package com.example.fcauth.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
@@ -19,5 +16,7 @@ public class Department {
     private String deptName;
 
     @Schema(example = "123456", description = "담당 조직장 임직원 ID")
-    private Long teamLeadId;
+    @OneToOne
+    @JoinColumn(name = "team_lead_id", referencedColumnName = "id")
+    private Employee teamLead;
 }
