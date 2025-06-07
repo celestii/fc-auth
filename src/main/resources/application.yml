@@ -21,7 +21,9 @@ spring:
       connection-timeout: 30000      # ??? ??? ???? ?? ?? (ms)
       validation-timeout: 5000       # ??? ??? ?? ?? (ms)
       connection-test-query: SELECT 1
-
+kakao:
+  client_id: da2e2d24516e56e7e758b1e84ab2d875
+  redirect_uri: http://localhost:8080/kakao/callback
 #logging:
 #  level:
 #    com.zaxxer.hikari: DEBUG
