@@ -24,6 +24,8 @@ public class Employee {
 
     private Long departmentId;
 
+    private String kakaoNickName;
+
     @ManyToMany
     @JoinTable(
             name = "employee_role_mapping",

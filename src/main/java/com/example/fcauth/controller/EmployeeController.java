@@ -27,8 +27,9 @@ public class EmployeeController {
     @PostMapping("/employees")
     public ResponseEntity<Employee> createEmployee(@RequestParam String firstName,
                                                    @RequestParam String lastName,
-                                                   @RequestParam Long departmentId) {
-        Employee employee = employeeService.createEmployee(firstName, lastName, departmentId);
+                                                   @RequestParam Long departmentId,
+                                                   @RequestParam String kakaoNickName) {
+        Employee employee = employeeService.createEmployee(firstName, lastName, departmentId, kakaoNickName);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
     }
 }
