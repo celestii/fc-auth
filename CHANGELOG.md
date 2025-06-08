@@ -1,4 +1,7 @@
 ## CHANGE LOG
+### 5-2 Spring Security
+✅ Spring Security 적용하기
+✅ 토큰 검증 로직 추가
 
 ### 5-1 JWT, Junit
 ✅ JWT 토큰 유틸 및 Junit 테스트 작성
