@@ -24,7 +24,7 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.listEmployees(), HttpStatus.OK);
     }
 
-    @PostMapping("/employees")
+    @PostMapping("/admin/employees")
     public ResponseEntity<Employee> createEmployee(@RequestParam String firstName,
                                                    @RequestParam String lastName,
                                                    @RequestParam Long departmentId,

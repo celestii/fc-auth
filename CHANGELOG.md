@@ -1,4 +1,8 @@
 ## CHANGE LOG
+
+### 5-3 RBAC
+✅ API 별 RBAC 설정 추가
+
 ### 5-2 Spring Security
 ✅ Spring Security 적용하기
 ✅ 토큰 검증 로직 추가

@@ -21,6 +21,7 @@ public class SecurityConfig {
     private final KakaoService kakaoService;
     private final EmployeeRepository employeeRepository;
     private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
 
     private static final String[] AUTH_ALLOWLIST = {
             "/swagger-ui/**", "/v3/**", "/login/**", "/images/**", "/kakao/**", "/favicon.ico",
@@ -36,8 +37,12 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/kakao/callback").permitAll()
                         .requestMatchers(AUTH_ALLOWLIST).permitAll()
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/employees/**").hasRole("USER")
+                        .requestMatchers("/departments/**").hasRole("USER")
                         .anyRequest().authenticated())
-                .exceptionHandling(handler -> handler.authenticationEntryPoint(customAuthenticationEntryPoint));
+                .exceptionHandling(handler -> handler.authenticationEntryPoint(customAuthenticationEntryPoint)
+                        .accessDeniedHandler(customAccessDeniedHandler));
 //                .oauth2Login(oauth2 -> oauth2
 //                        .loginPage("/kakao/callback")
 //                        .defaultSuccessUrl("/kakao/callback", true));
