@@ -1,5 +1,8 @@
 ## CHANGE LOG
 
+### 5-1 JWT, Junit
+✅ JWT 토큰 유틸 및 Junit 테스트 작성
+
 ### 4-4 Kakao Social Login 2
 ✅ 카카오 소셜 로그인 정보 확인
 ✅ 임직원 카카오 닉네임 정보 등록 
